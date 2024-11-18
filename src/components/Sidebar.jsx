@@ -106,7 +106,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const Sidebar = () => {
-  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  const { isAuthenticated, setIsAuthenticated, url } = useContext(Context);
 
   const navigate = useNavigate();
 
@@ -128,7 +128,8 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/admin/logout", {
+      // .get("http://localhost:4000/api/v1/user/admin/logout", {
+      .get(`${url}/api/v1/user/admin/logout`, {
         withCredentials: true,
       })
       .then((res) => {

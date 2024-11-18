@@ -7,7 +7,7 @@ import logo from "../../public/logo.png";
 import profilePic from "../../public/docHolder.webp";
 
 const AddNewDoctor = () => {
-  const { isAuthenticated } = useContext(Context);
+  const { isAuthenticated, url } = useContext(Context);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -70,7 +70,8 @@ const AddNewDoctor = () => {
       formData.append("docAvatarPreview", docAvatarPreview);
 
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/doctor/addnew",
+        // "http://localhost:4000/api/v1/user/doctor/addnew",
+        `${url}/api/v1/user/doctor/addnew`,
         formData,
         {
           withCredentials: true,

@@ -7,7 +7,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { toast } from "react-toastify";
 
 const Dashboard = () => {
-  const { isAuthenticated } = useContext(Context);
+  const { isAuthenticated, url } = useContext(Context);
   const [appointments, setAppointments] = useState([]);
   const [status, setStatus] = useState("");
   console.log(status);
@@ -18,7 +18,8 @@ const Dashboard = () => {
   const fetchAppointments = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/appointment/getall",
+        // "http://localhost:4000/api/v1/appointment/getall",
+        `${url}/api/v1/appointment/getall`,
         {
           withCredentials: true,
         }
@@ -32,7 +33,8 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        // `http://localhost:4000/api/v1/appointment/update/${appointmentId}`,
+        `${url}/api/v1/appointment/update/${appointmentId}`,
         { status },
         { withCredentials: true }
       );

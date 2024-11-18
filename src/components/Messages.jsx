@@ -5,14 +5,15 @@ import { useNavigate } from "react-router-dom";
 
 const Messages = () => {
   const [messages, setMessages] = useState([]);
-  const { isAuthenticated } = useContext(Context);
+  const { isAuthenticated, url } = useContext(Context);
   console.log(isAuthenticated);
   const navigate = useNavigate();
   useEffect(() => {
     const fetchMessages = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/message/getall",
+          // "http://localhost:4000/api/v1/message/getall",
+          `${url}/api/v1/message/getall`,
           {
             withCredentials: true,
           }

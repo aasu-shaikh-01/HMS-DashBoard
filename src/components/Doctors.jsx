@@ -5,14 +5,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Doctors = () => {
-  const { isAuthenticated } = useContext(Context);
+  const { isAuthenticated, url } = useContext(Context);
   const [doctors, setDoctors] = useState([]);
   const navigate = useNavigate();
 
   async function fetchDoctors() {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/doctors",
+        // "http://localhost:4000/api/v1/user/doctors",
+        `${url}/api/v1/user/doctors`,
         {
           withCredentials: true,
         }

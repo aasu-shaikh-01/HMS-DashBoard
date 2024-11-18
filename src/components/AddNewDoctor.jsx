@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import logo from "../../public/logo.png";
 
 const AddNewAdmin = () => {
-  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  const { isAuthenticated, setIsAuthenticated, url } = useContext(Context);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -22,7 +22,8 @@ const AddNewAdmin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/admin/addnew",
+        // "http://localhost:4000/api/v1/user/admin/addnew",
+        `${url}/api/v1/user/admin/addnew`,
         {
           firstName,
           lastName,
