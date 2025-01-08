@@ -92,7 +92,7 @@ const Doctors = () => {
     //     <h1>No Registered Doctors Found!</h1>
     //   )}
     // </div>
-    <div className="p-10 bg-gray-100 min-h-screen">
+    <div className="p-10 -z-50  bg-gray-100 min-h-screen">
       {doctors && doctors.length > 0 ? (
         <div className="flex flex-wrap justify-center gap-8">
           {doctors.map((element, index) => (
