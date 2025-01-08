@@ -101,7 +101,7 @@ import { AiFillMessage } from "react-icons/ai";
 import { FaUserDoctor } from "react-icons/fa6";
 import { MdAddModerator } from "react-icons/md";
 import { IoPersonAddSharp } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -128,8 +128,8 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      // .get("http://localhost:4000/api/v1/user/admin/logout", {
-      .get(`${url}/api/v1/user/admin/logout`, {
+      .get("http://localhost:4000/api/v1/user/admin/logout", {
+        // .get(`${url}/api/v1/user/admin/logout`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -144,7 +144,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <nav className={`${!isAuthenticated ? "hidden" : "flex"}`}>
+      {/* <nav className={`${!isAuthenticated ? "hidden" : "flex"}`}>
         <div className="flex justify-end items-center gap-12 mx-auto my-2">
           <span
             onClick={gotoHome}
@@ -187,6 +187,57 @@ const Sidebar = () => {
           >
             LOGOUT
             <RiLogoutBoxFill className="text-xl" />
+          </span>
+        </div>
+      </nav> */}
+      <nav
+        className={`${
+          !isAuthenticated ? "hidden" : "flex"
+        } bg-white shadow-md py-4 sticky top-0`}
+      >
+        <div className="flex justify-between items-center gap-8 mx-auto container px-8">
+          <Link to={"/"}><img src="./logo.png" width={"130rem"} alt="" /></Link>
+          <span
+            onClick={gotoHome}
+            className="flex cursor-pointer items-center gap-2 text-gray-700 hover:text-blue-500 transition-colors"
+          >
+            <TiHome className="text-2xl" />
+            <span className="text-lg font-medium">HOME</span>
+          </span>
+          <span
+            onClick={gotoDoctorsPage}
+            className="flex cursor-pointer items-center gap-2 text-gray-700 hover:text-blue-500 transition-colors"
+          >
+            <FaUserDoctor className="text-2xl" />
+            <span className="text-lg font-medium">DOCTORS</span>
+          </span>
+          <span
+            onClick={gotoAddNewAdmin}
+            className="flex cursor-pointer items-center gap-2 text-gray-700 hover:text-blue-500 transition-colors"
+          >
+            <MdAddModerator className="text-2xl" />
+            <span className="text-lg font-medium">ADD DOCTOR</span>
+          </span>
+          <span
+            onClick={gotoAddNewDoctor}
+            className="flex cursor-pointer items-center gap-2 text-gray-700 hover:text-blue-500 transition-colors"
+          >
+            <IoPersonAddSharp className="text-2xl" />
+            <span className="text-lg font-medium">ADD ADMIN</span>
+          </span>
+          <span
+            onClick={gotoMessage}
+            className="flex cursor-pointer items-center gap-2 text-gray-700 hover:text-blue-500 transition-colors"
+          >
+            <AiFillMessage className="text-2xl" />
+            <span className="text-lg font-medium">MESSAGE</span>
+          </span>
+          <span
+            onClick={handleLogout}
+            className="flex cursor-pointer items-center gap-2 text-gray-700 hover:text-red-500 transition-colors"
+          >
+            <RiLogoutBoxFill className="text-2xl" />
+            <span className="text-lg font-medium">LOGOUT</span>
           </span>
         </div>
       </nav>
