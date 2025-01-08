@@ -42,7 +42,7 @@
 
 //   const handleLogout = async () => {
 //     // await axios
-//     //   .get("http://localhost:4000/api/v1/user/admin/logout", {
+//     //   .get("https://hms-backend-czxa.onrender.com/api/v1/user/admin/logout", {
 //     //     withCredentials: true,
 //     //   })
 //     //   .then((res) => {
@@ -128,7 +128,7 @@ const Sidebar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:4000/api/v1/user/admin/logout", {
+      .get("https://hms-backend-czxa.onrender.com/api/v1/user/admin/logout", {
         // .get(`${url}/api/v1/user/admin/logout`, {
         withCredentials: true,
       })
@@ -193,7 +193,7 @@ const Sidebar = () => {
       <nav
         className={`${
           !isAuthenticated ? "hidden" : "flex"
-        } bg-white shadow-md py-4 sticky top-0`}
+        } bg-white shadow-md py-4 sticky top-0 z-50`}
       >
         <div className="flex justify-between items-center gap-8 mx-auto container px-8">
           <Link to={"/"}><img src="./logo.png" width={"130rem"} alt="" /></Link>

@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/login",
+        "https://hms-backend-czxa.onrender.com/api/v1/user/login",
         // `${url}/api/v1/user/login`,
         {
           email,
@@ -41,8 +41,9 @@ const Login = () => {
       //   setConfirmPassword("");
       // });
     } catch (error) {
-      toast.error(error.response.data.message);
-      // console.log(error);
+      // toast.error(error.response.data.message);
+      toast("Error")
+      console.log(error);
     }
   };
 

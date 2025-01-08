@@ -12,7 +12,7 @@ const Messages = () => {
     const fetchMessages = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/message/getall",
+          "https://hms-backend-czxa.onrender.com/api/v1/message/getall",
           // `${url}/api/v1/message/getall`,
           {
             withCredentials: true,

@@ -71,7 +71,7 @@ const AddNewDoctor = () => {
       formData.append("docAvatarPreview", docAvatarPreview);
 
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/doctor/addnew",
+        "https://hms-backend-czxa.onrender.com/api/v1/user/doctor/addnew",
         // `${url}/api/v1/user/doctor/addnew`,
         formData,
         {

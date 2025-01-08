@@ -22,7 +22,7 @@ const AddNewAdmin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/admin/addnew",
+        "https://hms-backend-czxa.onrender.com/api/v1/user/admin/addnew",
         // `${url}/api/v1/user/admin/addnew`,
         {
           firstName,
