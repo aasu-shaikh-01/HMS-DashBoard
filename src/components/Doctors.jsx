@@ -92,13 +92,13 @@ const Doctors = () => {
     //     <h1>No Registered Doctors Found!</h1>
     //   )}
     // </div>
-    <div className="p-10 -z-50  bg-gray-100 min-h-screen">
+    <div className="p-10 bg-gray-100 min-h-screen">
       {doctors && doctors.length > 0 ? (
         <div className="flex flex-wrap justify-center gap-8">
           {doctors.map((element, index) => (
             <div
               key={index}
-              className="bg-white shadow-lg rounded-lg p-6 max-w-sm w-full transform hover:scale-105 transition-transform"
+              className="bg-white rounded-lg p-6 max-w-sm w-full transform hover:scale-105 transition-transform"
             >
               <img
                 src={element.docAvatar && element.docAvatar.url}
@@ -133,7 +133,7 @@ const Doctors = () => {
         </div>
       ) : (
         <h1 className="text-center text-2xl font-bold text-gray-800">
-          No Registered Doctors Found!
+         Wait...
         </h1>
       )}
     </div>
