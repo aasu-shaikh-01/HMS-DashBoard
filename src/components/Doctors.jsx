@@ -8,7 +8,7 @@ const Doctors = () => {
   const { isAuthenticated } = useContext(Context);
   const [doctors, setDoctors] = useState([]);
   // console.log(do);
-  
+
   const navigate = useNavigate();
 
   async function fetchDoctors() {
@@ -133,7 +133,7 @@ const Doctors = () => {
         </div>
       ) : (
         <h1 className="text-center text-2xl font-bold text-gray-800">
-         Wait...
+          Wait...
         </h1>
       )}
     </div>
