@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Doctors = () => {
-  const { isAuthenticated, url } = useContext(Context);
+  const { isAuthenticated } = useContext(Context);
   const [doctors, setDoctors] = useState([]);
   // console.log(do);
   
